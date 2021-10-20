@@ -1,14 +1,36 @@
-# Add path to Go
-export GOROOT=/usr/lib/go
-export GOPATH=$HOME/go
-export GOBIN=$GOPATH/bin
-export PATH=${PATH}:$GOBIN
+# if tmux is executable and not inside a tmux session, then try to attach.
+# if attachment fails, start a new session
+# [ -x "$(command -v tmux -u)" ] \
+#   && [ -z "${TMUX}" ] \
+#   && { tmux -u attach || tmux -u; } >/dev/null 2>&1
+
+# Change prompt
+PROMPT='%B%F{240}%n@%m [%~]
+%(?.%F{green}→.%F{red}→)%f%b '
+
+# Run bfetch -> print minimal system information using pfetch
+export BFETCH_INFO=pfetch
+bfetch
 
 # Enable colors
 autoload -U colors && colors
 
-# Change prompt
-PROMPT='%(?.%F{green}√.%F{red}?%?)%f %B%F{240}%1~%f%b %# '
+# Fix some keys
+autoload zkbd
+[[ ! -f ${ZDOTDIR:-$HOME}/.zkbd/$TERM-$VENDOR-$OSTYPE ]] && zkbd
+source ${ZDOTDIR:-$HOME}/.zkbd/$TERM-$VENDOR-$OSTYPE
+
+[[ -n ${key[Backspace]} ]] && bindkey "${key[Backspace]}" backward-delete-char
+[[ -n ${key[Insert]} ]] && bindkey "${key[Insert]}" overwrite-mode
+[[ -n ${key[Home]} ]] && bindkey "${key[Home]}" beginning-of-line
+[[ -n ${key[PageUp]} ]] && bindkey "${key[PageUp]}" up-line-or-history
+[[ -n ${key[Delete]} ]] && bindkey "${key[Delete]}" delete-char
+[[ -n ${key[End]} ]] && bindkey "${key[End]}" end-of-line
+[[ -n ${key[PageDown]} ]] && bindkey "${key[PageDown]}" down-line-or-history
+[[ -n ${key[Up]} ]] && bindkey "${key[Up]}" up-line-or-search
+[[ -n ${key[Left]} ]] && bindkey "${key[Left]}" backward-char
+[[ -n ${key[Down]} ]] && bindkey "${key[Down]}" down-line-or-search
+[[ -n ${key[Right]} ]] && bindkey "${key[Right]}" forward-char
 
 ## Git integration into prompt
 autoload -Uz vcs_info
@@ -35,44 +57,49 @@ _comp_options+=(globdots)
 unsetopt beep
 
 # vi mode
-bindkey -v
-export KEYTIMEOUT=1
+# bindkey -v
+# export KEYTIMEOUT=1
+bindkey '^R' history-incremental-search-backward
 
-## Use vi keys in tab complete menu
-bindkey -M menuselect 'h' vi-backward-char
-bindkey -M menuselect 'j' vi-down-line-or-history
-bindkey -M menuselect 'k' vi-up-line-or-history
-bindkey -M menuselect 'l' vi-forward-char
-
-## Change cursor shape for different vi modes
-function zle-keymap-select {
-  if [[ ${KEYMAP} == vicmd ]] ||
-     [[ $1 = 'block' ]]; then
-    echo -ne '\e[1 q'
-  elif [[ ${KEYMAP} == main ]] ||
-       [[ ${KEYMAP} == viins ]] ||
-       [[ ${KEYMAP} = '' ]] ||
-       [[ $1 = 'beam' ]]; then
-    echo -ne '\e[5 q'
-  fi
-}
-zle -N zle-keymap-select
-zle-line-init() {
-  zle -K viins # initiate 'vi insert' as keymap (can be removed if 'bindkey -V' has been set elsewhere)
-  echo -ne '\e[5 q'
-}
-zle -N zle-line-init
-echo -ne '\e[5 q' # use beam shaped cursor on startup
-preexec() { echo -ne '\e[5 q' ;} # use beam shaped cursor for each new prompt
-
-# Use la to list all files (with dot files)
-alias la='ls -a'
-
-# Use cls to combine clear and ls
-alias cls='clear && ls'
-
-# Use cla to combine clear and ls -a
-alias cla='clear && ls -a'
+# Load dracula theme for syntax highlighting
+source ~/.config/zsh/.dracula
 
 # Load syntax highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+
+# clipcat integration
+if type clipcat-menu >/dev/null 2>&1; then
+    alias clipedit=' clipcat-menu --finder=builtin edit'
+    alias clipdel=' clipcat-menu --finder=builtin remove'
+
+    bindkey -s '^\' "^Q clipcat-menu --finder=builtin insert ^J"
+    bindkey -s '^]' "^Q clipcat-menu --finder=builtin remove ^J"
+fi
+
+# Fix ls colors
+alias ls='ls --color=auto'
+
+# quick vim 
+alias v='nvim'
+
+# tmux with UTF-8
+alias tmux="tmux -u"
+
+# Go
+export GOROOT=/usr/lib/go
+export GOPATH=$HOME/.go
+export GOBIN=$GOPATH/bin
+export PATH=${PATH}:$GOBIN
+
+export PATH=${PATH}:/home/arrr/.local/bin/
+
+export LANG=en_US.UTF-8
+
+GITDIR=~/Documents/GitHub/
+
+# Colorful cat
+alias ccat="highlight -O ansi"
+
+# Set caps to ctrl/esc combo
+setxkbmap -rules evdev -layout pl -model pc105 -option -option "ctrl:nocaps"
+xcape -e "#66=Escape"

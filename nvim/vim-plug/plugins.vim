@@ -1,88 +1,47 @@
-call plug#begin('~/.config/nvim/autoload/plugged')
+call plug#begin('~/.config/nvim/plugged')
 
-" Custom theme
-Plug 'dracula/vim', { 'name': 'dracula' }
+Plug 'pbrisbin/vim-colors-off' "
+Plug 'nikolvs/vim-sunbather' "
+Plug 'dracula/vim', { 'as': 'dracula' } "
 
-" Better syntax support
-Plug 'sheerun/vim-polyglot'
+Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}            " Fast as FUCK nvim completion
+Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'} " 9000+ Snippets
+Plug 'neovim/nvim-lspconfig'                         " Quickstart configurations for the Nvim LSP client
 
-" Smooth scrolling
-Plug 'psliwka/vim-smoothie'
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }  " Go development plugin for Vim
 
-" Auto pairs for brackets
-Plug 'jiangmiao/auto-pairs'
+Plug 'tell-k/vim-autopep8'                           " autopep8 plugin for Vim
 
-" Rainbow parentheses
-Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'mhinz/vim-startify' "
+Plug 'itchyny/lightline.vim' "
+Plug 'norcalli/nvim-colorizer.lua' "
+Plug 'junegunn/rainbow_parentheses.vim' "
+Plug 'junegunn/goyo.vim' "
+Plug 'junegunn/limelight.vim' "
 
-" Key legend popup
-Plug 'liuchengxu/vim-which-key'
+Plug 'justinmk/vim-dirvish'                          " Directory viewer for Vim
+Plug 'kristijanhusak/vim-dirvish-git'                " Git support for dirvish.vim
 
-" Lightweight mode indicator
-Plug 'itchyny/lightline.vim'
+Plug 'jiangmiao/auto-pairs'                          " Insert or delete brackets, parens, quotes in pair
+Plug 'unblevable/quick-scope'                        " Lightning fast left-right movement in Vim
+Plug 'tpope/vim-commentary'                          " Comment stuff out
+Plug 'tpope/vim-surround'                            " Quoting/parenthesizing made simple
+Plug 'tpope/vim-fugitive'                            " A Git wrapper so awesome, it should be illegal
+Plug 'tpope/vim-rhubarb'                             " GitHub extension for fugitive.vim
+Plug 'mhinz/vim-signify'                             " Show a diff using Vim its sign column
+Plug 'junegunn/gv.vim'                               " A git commit browser in Vim
+Plug 'junegunn/vim-easy-align'                       " A Vim alignment plugin
+Plug 'jeffkreeftmeijer/vim-numbertoggle'             " Toggles between hybrid and absolute line numbers automatically
+" Plug 'Yggdroot/indentLine'                           " A vim plugin to display the indention levels with thin vertical lines
+Plug 'lukas-reineke/indent-blankline.nvim'           " Indent guides for Neovim
+Plug 'tpope/vim-sensible'                            " Defaults everyone can agree on
+Plug 'alvan/vim-closetag'                            " Auto close (X)HTML tags
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }  " fzf ❤️ vim
+Plug 'junegunn/fzf.vim'
+Plug 'sheerun/vim-polyglot'                          " A solid language pack for Vim
+Plug 'wellle/context.vim'                            " Vim plugin that shows the context of the currently visible buffer contents
+Plug 'simnalamburt/vim-mundo'                        " Vim undo tree visualizer
 
-" Tabs indicator
-Plug 'mkitt/tabline.vim'
-
-" Autocompletion engine ; Use release branch (recommend)
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-" Hex colors visualizer
-Plug 'norcalli/nvim-colorizer.lua'
-
-" Comment line easily
-Plug 'tpope/vim-commentary'
-
-" Start screen
-Plug 'mhinz/vim-startify'
-
-" Highlight unique characters in words
-Plug 'unblevable/quick-scope'
-
-" Universal snippets
-Plug 'honza/vim-snippets'
-Plug 'SirVer/ultisnips'
-
-" Git integration
-Plug 'mhinz/vim-signify'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rhubarb'
-Plug 'junegunn/gv.vim'
-
-" Interactive scratchpad
-Plug 'metakirby5/codi.vim'
-
-" Surround text in parentheses
-Plug 'tpope/vim-surround'
-
-" Move to any 2 char combo
-Plug 'justinmk/vim-sneak'
-
-" Single to multi line
-Plug 'AndrewRadev/splitjoin.vim'
-
-" Move func args to sides
-Plug 'AndrewRadev/sideways.vim'
-
-" Turn off relative line numbers when it makes sense
-Plug 'jeffkreeftmeijer/vim-numbertoggle'
-
-" Automated tables
-Plug 'dhruvasagar/vim-table-mode'
-
-" GOLANG support
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-
-" GCode syntax highlighting
-Plug 'gregjurman/vim-nc'
-
-" HTML support
-Plug 'tmhedberg/matchit'
-Plug 'mattn/emmet-vim'
-
-" Pandoc's Markdown syntax
-" Plug 'vim-pandoc/vim-pandoc'
-" Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'ryanoasis/vim-devicons'                        " Adds file type icons to Vim plugins
 
 call plug#end()
-

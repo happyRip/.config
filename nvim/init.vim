@@ -1,21 +1,14 @@
-source $HOME/.config/nvim/vim-plug/plugins.vim 
-source $HOME/.config/nvim/general/settings.vim
-source $HOME/.config/nvim/keys/mappings.vim
-" source $HOME/.config/nvim/themes/vim-one.vim
-source $HOME/.config/nvim/themes/dracula.vim
-source $HOME/.config/nvim/plug-config/coc.vim
-source $HOME/.config/nvim/plug-config/lightline.vim
-source $HOME/.config/nvim/plug-config/rainbow_parentheses.vim
-source $HOME/.config/nvim/plug-config/vim-commentary.vim
-source $HOME/.config/nvim/plug-config/signify.vim
-source $HOME/.config/nvim/keys/which-key.vim
-source $HOME/.config/nvim/plug-config/quickscope.vim
-source $HOME/.config/nvim/plug-config/codi.vim
-source $HOME/.config/nvim/plug-config/table-mode.vim
-source $HOME/.config/nvim/plug-config/auto-pairs.vim
-source $HOME/.config/nvim/plug-config/ultisnips.vim
-
-lua require'plug-colorizer'
-
-set cmdheight=1 
-
+source ~/.config/nvim/vim-plug/plugins.vim
+source ~/.config/nvim/general/settings.vim
+source ~/.config/nvim/general/theme.vim
+source ~/.config/nvim/config-plug/autopep8.vim
+source ~/.config/nvim/config-plug/coq.vim
+source ~/.config/nvim/config-plug/devicons.vim
+source ~/.config/nvim/config-plug/easy-align.vim
+source ~/.config/nvim/config-plug/go.vim
+source ~/.config/nvim/config-plug/indent-blankline.lua
+source ~/.config/nvim/config-plug/lightline.vim
+source ~/.config/nvim/config-plug/lspconfig.vim
+source ~/.config/nvim/config-plug/mundo.vim
+source ~/.config/nvim/config-plug/quickscope.vim
+source ~/.config/nvim/general/mappings.vim
