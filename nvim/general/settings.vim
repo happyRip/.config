@@ -1,22 +1,24 @@
-set hidden                          
-set encoding=utf-8                  
-set fileencoding=utf-8              
-set pumheight=10                    
-set ruler              		    
-set cmdheight=2                   
-set iskeyword+=-                    
-set mouse=a                         
-set splitbelow splitright                      
-set conceallevel=0                  
-set tabstop=4  shiftwidth=4                    
-set smarttab  expandtab                       
-set smartindent  autoindent                      
-set laststatus=0                    
-set number                          
-set cursorline                      
-set noshowmode                      
-set nobackup                        
-set clipboard=unnamedplus           
+set hidden
+set encoding=utf-8
+set fileencoding=utf-8
+set pumheight=10
+set ruler
+set cmdheight=2
+set iskeyword+=-
+set mouse=a
+set splitbelow splitright
+set conceallevel=0
+set tabstop=4  shiftwidth=4
+set smarttab  expandtab
+set smartindent  autoindent
+set laststatus=0
+set number
+set cursorline
+set noshowmode
+set nobackup
+set clipboard=unnamed,unnamedplus
+set lazyredraw " speed up on large files
+set list " show hidden characters
 
 " turn off continuous comments
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o

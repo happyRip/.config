@@ -59,3 +59,19 @@ nnoremap <Leader><Down> :m +1<CR>
 " Delete instead of cut
 xnoremap <Leader>d "_d
 nnoremap <Leader>d "_d
+
+" Select all text
+nmap vA ggVG
+
+" Select between tabs
+nmap <Leader>t :tabnew<CR>
+nmap <Leader>T :tabnew<Space>
+nmap <Leader>1 1gt
+nmap <Leader>2 2gt
+nmap <Leader>3 3gt
+nmap <Leader>4 4gt
+nmap <Leader>5 5gt
+nmap <Leader>6 6gt
+nmap <Leader>7 7gt
+nmap <Leader>8 8gt
+nmap <Leader>9 9gt

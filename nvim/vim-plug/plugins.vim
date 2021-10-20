@@ -8,12 +8,9 @@ Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}            " Fast as FUCK nvim complet
 Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'} " 9000+ Snippets
 Plug 'neovim/nvim-lspconfig'                         " Quickstart configurations for the Nvim LSP client
 
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }  " Go development plugin for Vim
-
-Plug 'tell-k/vim-autopep8'                           " autopep8 plugin for Vim
-
 Plug 'mhinz/vim-startify' "
 Plug 'itchyny/lightline.vim' "
+Plug 'mg979/vim-xtabline'                            " Tabline customization with buffer filtering
 Plug 'norcalli/nvim-colorizer.lua' "
 Plug 'junegunn/rainbow_parentheses.vim' "
 Plug 'junegunn/goyo.vim' "
@@ -32,7 +29,6 @@ Plug 'mhinz/vim-signify'                             " Show a diff using Vim its
 Plug 'junegunn/gv.vim'                               " A git commit browser in Vim
 Plug 'junegunn/vim-easy-align'                       " A Vim alignment plugin
 Plug 'jeffkreeftmeijer/vim-numbertoggle'             " Toggles between hybrid and absolute line numbers automatically
-" Plug 'Yggdroot/indentLine'                           " A vim plugin to display the indention levels with thin vertical lines
 Plug 'lukas-reineke/indent-blankline.nvim'           " Indent guides for Neovim
 Plug 'tpope/vim-sensible'                            " Defaults everyone can agree on
 Plug 'alvan/vim-closetag'                            " Auto close (X)HTML tags
@@ -42,6 +38,14 @@ Plug 'sheerun/vim-polyglot'                          " A solid language pack for
 Plug 'wellle/context.vim'                            " Vim plugin that shows the context of the currently visible buffer contents
 Plug 'simnalamburt/vim-mundo'                        " Vim undo tree visualizer
 
-Plug 'ryanoasis/vim-devicons'                        " Adds file type icons to Vim plugins
+" Motions "
+Plug 'easymotion/vim-easymotion'                     " Vim motions on speed!
+
+" Language specific "
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' } " Go development plugin for Vim
+Plug 'tell-k/vim-autopep8'                          " autopep8 plugin for Vim
+Plug 'kergoth/vim-bitbake'                          " Vim files for the BitBake tool
+
+Plug 'ryanoasis/vim-devicons'                       " Adds file type icons to Vim plugins
 
 call plug#end()
