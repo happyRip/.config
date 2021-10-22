@@ -7,6 +7,7 @@
 # Change prompt
 PROMPT='%B%F{240}%n@%m [%~]
 %(?.%F{green}→.%F{red}→)%f%b '
+# PROMPT='%B%{$bg[red]%2~%}%{$reset_color%} %(?.%F{green}>.%F{red}>)%f%b '
 
 # Run bfetch -> print minimal system information using pfetch
 export BFETCH_INFO=pfetch
