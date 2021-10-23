@@ -1,4 +1,4 @@
-:highlight GitSignsAdd guifg=#FFB86C
+:highlight GitSignsChange guifg=#FFB86C
 
 lua << EOF
 require('gitsigns').setup {

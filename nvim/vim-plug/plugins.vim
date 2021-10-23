@@ -6,9 +6,16 @@ Plug 'Mofiqul/dracula.nvim'                               " Dracula colorscheme 
 Plug 'folke/lsp-colors.nvim'                              " Plugin that creates missing LSP diagnostics highlight groups for color schemes
 Plug 'tribela/vim-transparent'
 
-Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}                 " Fast as FUCK nvim completion
-Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}      " 9000+ Snippets
+" Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}                 " Fast as FUCK nvim completion
+" Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}      " 9000+ Snippets
 Plug 'neovim/nvim-lspconfig'                              " Quickstart configurations for the Nvim LSP client
+Plug 'hrsh7th/cmp-nvim-lsp' " A completion plugin for neovim coded in Lua.
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'SirVer/ultisnips'
+Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+
+
 
 Plug 'mhinz/vim-startify'                                 " The fancy start screen for Vim
 Plug 'hoob3rt/lualine.nvim'
@@ -33,6 +40,8 @@ Plug 'tpope/vim-repeat'                                   " enable repeating sup
 
 Plug 'nvim-lua/plenary.nvim'
 Plug 'lewis6991/gitsigns.nvim'
+
+Plug 'folke/trouble.nvim' " A pretty diagnostics, references, telescope results, quickfix and location list to help you solve all the trouble your code is causing.
 
 Plug 'junegunn/gv.vim'                                    " A git commit browser in Vim
 Plug 'junegunn/vim-easy-align'                            " A Vim alignment plugin
