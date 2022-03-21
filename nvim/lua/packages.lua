@@ -40,10 +40,10 @@ local packages = {
         },
         -- tag = 'release' -- To use the latest release
     },
-    {
-        "folke/trouble.nvim",
-        requires = "kyazdani42/nvim-web-devicons",
-    },
+    -- {
+    --     "folke/trouble.nvim",
+    --     requires = "kyazdani42/nvim-web-devicons",
+    -- },
     {
         'Pocco81/TrueZen.nvim',
         'folke/twilight.nvim',
