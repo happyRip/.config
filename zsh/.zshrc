@@ -5,9 +5,10 @@
 #   && { tmux -u attach || tmux -u; } >/dev/null 2>&1
 
 # Change prompt
-PROMPT='%B%F{240}%n@%m [%~]
-%(?.%F{green}→.%F{red}→)%f%b '
+# PROMPT='%B%F{240}%n@%m [%~]
+# %(?.%F{green}→.%F{red}→)%f%b '
 # PROMPT='%B%{$bg[red]%2~%}%{$reset_color%} %(?.%F{green}>.%F{red}>)%f%b '
+PROMPT='%(?.%F{green}>.%F{red}>)%f%b '
 
 # Run bfetch -> print minimal system information using pfetch
 export BFETCH_INFO=pfetch
@@ -93,6 +94,7 @@ export GOBIN=$GOPATH/bin
 export PATH=${PATH}:$GOBIN
 
 export PATH=${PATH}:/home/arrr/.local/bin/
+export PATH="${PATH}:/home/abor/.local/bin"
 
 export LANG=en_US.UTF-8
 
@@ -101,6 +103,8 @@ GITDIR=~/Documents/GitHub/
 # Colorful cat
 alias ccat="highlight -O ansi"
 
-# Set caps to ctrl/esc combo
-setxkbmap -rules evdev -layout pl -model pc105 -option -option "ctrl:nocaps"
-xcape -e "#66=Escape"
+# Install Ruby Gems to ~/gems
+export GEM_HOME="$HOME/gems"
+export PATH="$HOME/gems/bin:$PATH"
+export PATH="${HOME}/.local/share/gem/ruby/3.0.0/bin:${PATH}"
+source /usr/share/nvm/init-nvm.sh
