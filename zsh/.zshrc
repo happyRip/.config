@@ -5,9 +5,7 @@
 #   && { tmux -u attach || tmux -u; } >/dev/null 2>&1
 
 # Change prompt
-PROMPT='%B%F{240}%n@%m [%~]
-%(?.%F{green}→.%F{red}→)%f%b '
-# PROMPT='%B%{$bg[red]%2~%}%{$reset_color%} %(?.%F{green}>.%F{red}>)%f%b '
+PROMPT='> '
 
 # Run bfetch -> print minimal system information using pfetch
 export BFETCH_INFO=pfetch
@@ -15,23 +13,6 @@ bfetch
 
 # Enable colors
 autoload -U colors && colors
-
-# Fix some keys
-autoload zkbd
-[[ ! -f ${ZDOTDIR:-$HOME}/.zkbd/$TERM-$VENDOR-$OSTYPE ]] && zkbd
-source ${ZDOTDIR:-$HOME}/.zkbd/$TERM-$VENDOR-$OSTYPE
-
-[[ -n ${key[Backspace]} ]] && bindkey "${key[Backspace]}" backward-delete-char
-[[ -n ${key[Insert]} ]] && bindkey "${key[Insert]}" overwrite-mode
-[[ -n ${key[Home]} ]] && bindkey "${key[Home]}" beginning-of-line
-[[ -n ${key[PageUp]} ]] && bindkey "${key[PageUp]}" up-line-or-history
-[[ -n ${key[Delete]} ]] && bindkey "${key[Delete]}" delete-char
-[[ -n ${key[End]} ]] && bindkey "${key[End]}" end-of-line
-[[ -n ${key[PageDown]} ]] && bindkey "${key[PageDown]}" down-line-or-history
-[[ -n ${key[Up]} ]] && bindkey "${key[Up]}" up-line-or-search
-[[ -n ${key[Left]} ]] && bindkey "${key[Left]}" backward-char
-[[ -n ${key[Down]} ]] && bindkey "${key[Down]}" down-line-or-search
-[[ -n ${key[Right]} ]] && bindkey "${key[Right]}" forward-char
 
 ## Git integration into prompt
 autoload -Uz vcs_info
@@ -88,11 +69,11 @@ alias tmux="tmux -u"
 
 # Go
 export GOROOT=/usr/lib/go
-export GOPATH=$HOME/.go
+export GOPATH=${HOME}/.go
 export GOBIN=$GOPATH/bin
 export PATH=${PATH}:$GOBIN
 
-export PATH=${PATH}:/home/arrr/.local/bin/
+export PATH=${PATH}:${HOME}/.local/bin/
 
 export LANG=en_US.UTF-8
 
@@ -100,7 +81,3 @@ GITDIR=~/Documents/GitHub/
 
 # Colorful cat
 alias ccat="highlight -O ansi"
-
-# Set caps to ctrl/esc combo
-setxkbmap -rules evdev -layout pl -model pc105 -option -option "ctrl:nocaps"
-xcape -e "#66=Escape"
