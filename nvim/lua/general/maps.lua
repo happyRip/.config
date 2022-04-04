@@ -1,6 +1,7 @@
 local map = vim.api.nvim_set_keymap
 
 local g = vim.g
+local cmd = vim.cmd
 
 map('n', '<Space>', '', {})
 g.mapleader = ' '
@@ -26,3 +27,5 @@ map('n', '<Leader><Enter>', 'O<Esc>', options)
 map('n', '<Leader><Up>',   ':m -2<CR>', options)
 map('n', '<Leader><Down>', ':m +1<CR>', options)
 
+cmd [[cabbrev wq execute "lua vim.lsp.buf.formatting_seq_sync()" <bar> wq]]
+cmd [[cabbrev x execute "lua vim.lsp.buf.formatting_seq_sync()" <bar> x]]

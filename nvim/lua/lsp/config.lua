@@ -52,7 +52,7 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 lsp_installer.on_server_ready(function(server)
   local opts = {
-    capabilities = capabilities
+    capabilities = capabilities,
   }
 
   -- (optional) Customize the options passed to the server
