@@ -29,3 +29,4 @@ o.lazyredraw = true
 wo.number = true
 wo.cursorline = true
 wo.list = true
+
