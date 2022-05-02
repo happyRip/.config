@@ -15,8 +15,10 @@ local packages = {
     'L3MON4D3/LuaSnip',
     'saadparwaiz1/cmp_luasnip',
     'rafamadriz/friendly-snippets',
-
-    -- 'lukas-reineke/lsp-format.nvim',
+  },
+  {
+    "startup-nvim/startup.nvim",
+    requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
   },
   {
     'nvim-treesitter/nvim-treesitter',
@@ -34,6 +36,10 @@ local packages = {
   },
   { 'lukas-reineke/indent-blankline.nvim' },
   {
+    'windwp/nvim-ts-autotag',
+    requires = { 'nvim-treesitter/nvim-treesitter', },
+  },
+  {
     'p00f/nvim-ts-rainbow',
     requires = { 'nvim-treesitter/nvim-treesitter', },
   },
@@ -50,10 +56,9 @@ local packages = {
       { 'nvim-lua/plenary.nvim' },
     },
   },
-  -- {
-  --     "folke/trouble.nvim",
-  --     requires = "kyazdani42/nvim-web-devicons",
-  -- },
+  {
+  "ur4ltz/surround.nvim",
+  },
   {
     'Pocco81/TrueZen.nvim',
     'folke/twilight.nvim',

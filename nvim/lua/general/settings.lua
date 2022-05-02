@@ -24,6 +24,7 @@ o.laststatus = 0
 o.showmode = false
 o.backup = false
 o.lazyredraw = true
+o.undofile = true
 
 -- window options
 wo.number = true
