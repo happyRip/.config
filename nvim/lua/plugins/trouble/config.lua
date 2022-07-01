@@ -1,4 +1,4 @@
-require("trouble").setup{}
+require("trouble").setup()
 
 -- Lua
 vim.api.nvim_set_keymap("n", "<leader>xx", "<cmd>Trouble<cr>",

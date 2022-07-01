@@ -9,7 +9,7 @@ o.fileencoding = 'utf-8'
 o.pumheight = 10
 o.ruler = true
 o.cmdheight = 2
---o.iskeyword:append('-')
+-- o.iskeyword:append('-')
 o.mouse = 'a'
 o.splitbelow = true
 o.splitright = true
@@ -25,9 +25,9 @@ o.showmode = false
 o.backup = false
 o.lazyredraw = true
 o.undofile = true
+o.wrap = false
 
 -- window options
 wo.number = true
 wo.cursorline = true
 wo.list = true
-

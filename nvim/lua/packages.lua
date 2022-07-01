@@ -18,7 +18,7 @@ local packages = {
   },
   {
     "startup-nvim/startup.nvim",
-    requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
+    requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
   },
   {
     'nvim-treesitter/nvim-treesitter',
@@ -57,7 +57,7 @@ local packages = {
     },
   },
   {
-  "ur4ltz/surround.nvim",
+    "ur4ltz/surround.nvim",
   },
   {
     'Pocco81/TrueZen.nvim',
@@ -69,7 +69,25 @@ local packages = {
   { 'windwp/nvim-autopairs' },
   { 'norcalli/nvim-colorizer.lua' },
   { 'Mofiqul/dracula.nvim' },
-  { 'xiyaowong/nvim-transparent' }
+  { 'xiyaowong/nvim-transparent' },
+
+  {
+    'mfussenegger/nvim-dap',
+    'rcarriga/nvim-dap-ui',
+    'theHamsta/nvim-dap-virtual-text',
+  },
+  {
+    "folke/trouble.nvim",
+    requires = "kyazdani42/nvim-web-devicons",
+  },
+  {
+    'ray-x/go.nvim',
+    'ray-x/guihua.lua',
+
+    requires = {
+      { 'mfussenegger/nvim-dap' },
+    },
+  },
 }
 
 return packages
