@@ -1,13 +1,14 @@
-# ignore everything
-*
+# # ignore everything
+# *
 
-# exept:
-!./.gitignore
-!./nvim
-!./nvim/*
-!./zsh
-!./st
+# # exept:
+# !./.gitignore
+# !./nvim
+# !./nvim/**
+# !./zsh
+# !./zsh/**
+# !./st
 
-# don't track those in nvim folder
-./nvim/undo/
-./nvim/plugged/
+# # don't track those in nvim folder
+# ./nvim/undo/
+# ./nvim/plugged/
