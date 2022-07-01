@@ -26,6 +26,7 @@ o.backup = false
 o.lazyredraw = true
 o.undofile = true
 o.wrap = false
+o.undofile = true
 
 -- window options
 wo.number = true
