@@ -1,5 +1,5 @@
 # Change prompt
-PROMPT='> '
+PROMPT=' $ '
 
 # Run bfetch -> print minimal system information using pfetch
 export BFETCH_INFO=pfetch
@@ -72,3 +72,4 @@ export PATH=${PATH}:${HOME}/.local/bin/
 export LANG=en_US.UTF-8
 
 GITDIR=~/Documents/GitHub/
+
