@@ -1,48 +1,50 @@
 local map = vim.api.nvim_set_keymap
-
 local g = vim.g
-local cmd = vim.cmd
 
 map('n', '<Space>', '', {})
 g.mapleader = ' '
 
-local options = {
-  noremap = true,
-  silent = true,
+local mapx = require 'mapx'.setup {
+  global = true,
+  whichkey = true,
 }
 
-map('n', '<Esc>', ':nohlsearch<CR>', options)
+local nnoremap = mapx.nnoremap
 
-map('n', '<Leader>h', ':split<CR>', options)
-map('n', '<Leader>v', ':vsplit<CR>', options)
+nnoremap('<Esc>', ':nohlsearch<CR>', 'Turn off search highlight', 'silent')
 
-map('n', '<Leader>o', 'lb~<Esc>', options)
-map('n', '<Leader>O', 'viwU<Esc>', options)
+nnoremap('<Leader>h', ':split<CR>', 'Split horizontally', 'silent')
+nnoremap('<Leader>v', ':vsplit<CR>', 'Split vertically', 'silent')
 
-map('n', '<Tab>', ':bnext<CR>', options)
-map('n', '<S-Tab>', ':bnext<CR>', options)
+nnoremap('<Leader>o', 'lb~<Esc>', 'Toggle capitalization of first character', 'silent')
+nnoremap('<Leader>O', 'viwU<Esc>', 'Capitalize word', 'silent')
 
-map('n', '<C-h>', '<C-w>h', options)
-map('n', '<C-j>', '<C-w>j', options)
-map('n', '<C-k>', '<C-w>k', options)
-map('n', '<C-l>', '<C-w>l', options)
+nnoremap('<Tab>', ':bnext<CR>', 'Buffer next', 'silent')
+nnoremap('<S-Tab>', ':bnext<CR>', 'Buffer previous', 'silent')
 
--- map('n', '<', '<gv', options)
--- map('n', '>', '>gv', options)
+nnoremap('<C-h>', '<C-w>h', 'Window left', 'silent')
+nnoremap('<C-j>', '<C-w>j', 'Window down', 'silent')
+nnoremap('<C-k>', '<C-w>k', 'Window up', 'silent')
+nnoremap('<C-l>', '<C-w>l', 'Window right', 'silent')
 
-map('n', '<Enter>', 'o<Esc>k', options)
-map('n', '<Leader><Enter>', 'O<Esc>j', options)
+nnoremap('<Enter>', 'o<Esc>k', 'Empty line below', 'silent')
+nnoremap('<Leader><Enter>', 'O<Esc>j', 'Empty line above', 'silent')
 
-map('n', '<Leader><Up>', ':m -2<CR>', options)
-map('n', '<Leader><Down>', ':m +1<CR>', options)
+nnoremap('<Leader><Up>', ':m -2<CR>', 'Swap line up', 'silent')
+nnoremap('<Leader><Down>', ':m +1<CR>', 'Swap line down', 'silent')
 
--- Telescope
-map('n', '<Leader>ff', ':Telescope find_files<CR>', options)
-map('n', '<Leader>fg', ':Telescope live_grep<CR>', options)
-map('n', '<Leader>fb', ':Telescope buffers<CR>', options)
-map('n', '<Leader>fh', ':Telescope help_tags<CR>', options)
+mapx.nname('<Leader>f', 'Telescope')
+nnoremap('<Leader>ff', ':Telescope find_files<CR>', 'Telescope: Find files', 'silent')
+nnoremap('<Leader>fg', ':Telescope live_grep<CR>', 'Telescope: Live grep', 'silent')
+nnoremap('<Leader>fb', ':Telescope buffers<CR>', 'Telescope: Buffers', 'silent')
+nnoremap('<Leader>fh', ':Telescope help_tags<CR>', 'Telescope: Help tags', 'silent')
+
+mapx.nname('<Leader>p', 'Pandoc')
+nnoremap('<Leader>pr', ':Pandoc', 'Pandoc: Render document', 'silent', { ft = 'markdown', })
 
 -- Other
+local cmd = vim.cmd
 
 cmd [[cabbrev wq execute "lua vim.lsp.buf.formatting_seq_sync()" <bar> wq]]
 cmd [[cabbrev x execute "lua vim.lsp.buf.formatting_seq_sync()" <bar> x]]
+

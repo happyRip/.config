@@ -1,6 +1,7 @@
 local packages = {
   {
-    'wbthomason/packer.nvim', opt = true
+    'wbthomason/packer.nvim',
+    opt = true,
   },
   {
     'neovim/nvim-lspconfig',
@@ -18,7 +19,16 @@ local packages = {
   },
   {
     "startup-nvim/startup.nvim",
-    requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+    requires = {
+      "nvim-telescope/telescope.nvim",
+      "nvim-lua/plenary.nvim"
+    },
+  },
+  {
+    'b0o/mapx.nvim',
+    requires = {
+      'folke/which-key.nvim',
+    },
   },
   {
     'nvim-treesitter/nvim-treesitter',
@@ -32,28 +42,35 @@ local packages = {
   },
   {
     'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+    requires = {
+      'kyazdani42/nvim-web-devicons',
+    },
+    opt = true,
   },
   { 'lukas-reineke/indent-blankline.nvim' },
   {
     'windwp/nvim-ts-autotag',
-    requires = { 'nvim-treesitter/nvim-treesitter', },
+    requires = {
+      'nvim-treesitter/nvim-treesitter',
+    },
   },
   {
     'p00f/nvim-ts-rainbow',
-    requires = { 'nvim-treesitter/nvim-treesitter', },
+    requires = {
+      'nvim-treesitter/nvim-treesitter',
+    },
   },
   {
     'lewis6991/gitsigns.nvim',
     requires = {
-      'nvim-lua/plenary.nvim'
+      'nvim-lua/plenary.nvim',
     },
-    tag = 'release' -- To use the latest release
+    tag = 'release', -- To use the latest release
   },
   {
     'nvim-telescope/telescope.nvim',
     requires = {
-      { 'nvim-lua/plenary.nvim' },
+      'nvim-lua/plenary.nvim',
     },
   },
   {
@@ -70,7 +87,6 @@ local packages = {
   { 'norcalli/nvim-colorizer.lua' },
   { 'Mofiqul/dracula.nvim' },
   { 'xiyaowong/nvim-transparent' },
-
   {
     'mfussenegger/nvim-dap',
     'rcarriga/nvim-dap-ui',
@@ -78,16 +94,21 @@ local packages = {
   },
   {
     "folke/trouble.nvim",
-    requires = "kyazdani42/nvim-web-devicons",
+    requires = {
+      "kyazdani42/nvim-web-devicons",
+    },
   },
   {
     'ray-x/go.nvim',
     'ray-x/guihua.lua',
-
     requires = {
-      { 'mfussenegger/nvim-dap' },
+      'mfussenegger/nvim-dap',
     },
   },
+  {
+    'aspeddro/pandoc.nvim',
+    'jbyuki/nabla.nvim',
+  }
 }
 
 return packages

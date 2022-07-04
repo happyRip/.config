@@ -12,3 +12,5 @@
 # # don't track those in nvim folder
 # ./nvim/undo/
 # ./nvim/plugged/
+
+./nvim/packer.nvim/
